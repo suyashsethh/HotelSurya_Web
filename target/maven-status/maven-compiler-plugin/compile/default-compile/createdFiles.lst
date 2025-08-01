@@ -2,7 +2,6 @@ com/hotelsurya/controller/HomeController.class
 com/hotelsurya/dao/BookingDAOImpl.class
 com/hotelsurya/service/BookingService.class
 com/hotelsurya/model/Booking.class
-com/hotelsurya/controller/TestController.class
 com/hotelsurya/controller/HomeController$Room.class
 com/hotelsurya/controller/BookingController.class
 com/hotelsurya/service/BookingStatistics.class

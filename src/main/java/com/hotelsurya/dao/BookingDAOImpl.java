@@ -21,8 +21,18 @@ public class BookingDAOImpl implements BookingDAO {
     @PostConstruct
     public void init() {
         createTableIfNotExists();
+        System.out.println("BookingDAO initialized successfully!");
     }
 
+    private boolean tableExists = false;
+    
+    private void ensureTableExists() {
+        if (!tableExists) {
+            createTableIfNotExists();
+            tableExists = true;
+        }
+    }
+    
     private void createTableIfNotExists() {
         String createTableSQL = """
             CREATE TABLE IF NOT EXISTS bookings (
@@ -73,6 +83,7 @@ public class BookingDAOImpl implements BookingDAO {
 
     @Override
     public void saveBooking(Booking booking) {
+        ensureTableExists();
         String sql = """
             INSERT INTO bookings (guest_name, email, phone, room_type, number_of_rooms, 
                                  number_of_guests, check_in_date, check_out_date, total_amount, 
@@ -99,6 +110,7 @@ public class BookingDAOImpl implements BookingDAO {
 
     @Override
     public List<Booking> getAllBookings() {
+        ensureTableExists();
         String sql = "SELECT * FROM bookings ORDER BY booking_date DESC";
         return jdbcTemplate.query(sql, bookingRowMapper);
     }
@@ -139,6 +151,7 @@ public class BookingDAOImpl implements BookingDAO {
 
     @Override
     public int getTotalBookings() {
+        ensureTableExists();
         String sql = "SELECT COUNT(*) FROM bookings";
         return jdbcTemplate.queryForObject(sql, Integer.class);
     }

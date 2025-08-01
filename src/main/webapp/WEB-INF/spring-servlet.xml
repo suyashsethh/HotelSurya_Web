@@ -34,19 +34,21 @@
 
     <!-- Database Configuration -->
 
-    <!-- H2 Database DataSource for development -->
-    <!--    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
-    <!--        <property name="driverClassName" value="org.h2.Driver"/>-->
-    <!--        <property name="url" value="jdbc:h2:mem:hotelsurya;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/>-->
-    <!--        <property name="username" value="root"/>-->
-    <!--        <property name="password" value="root"/>-->
-    <!--    </bean>-->
+    <!-- H2 Database DataSource for development (PERSISTENT FILE-BASED) -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://localhost:3306/hotel_surya?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC"/>
-        <property name="username" value="root"/>
-        <property name="password" value="root"/>
+        <property name="driverClassName" value="org.h2.Driver"/>
+        <property name="url" value="jdbc:h2:file:./data/hotelsurya;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1"/>
+        <property name="username" value="sa"/>
+        <property name="password" value=""/>
     </bean>
+    
+    <!-- MySQL Database DataSource for production (commented out) -->
+    <!--<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">-->
+    <!--    <property name="driverClassName" value="com.mysql.cj.jdbc.Driver"/>-->
+    <!--    <property name="url" value="jdbc:mysql://localhost:3306/hotel_surya?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=UTC"/>-->
+    <!--    <property name="username" value="root"/>-->
+    <!--    <property name="password" value="root"/>-->
+    <!--</bean>-->
 
 
     <!-- JdbcTemplate -->
@@ -55,9 +57,9 @@
     </bean>
 
     <!-- H2 Console for database management (optional) -->
-<!--    <bean id="h2Console" class="org.h2.tools.Server" factory-method="createWebServer" init-method="start"-->
-<!--          destroy-method="stop">-->
-<!--        <constructor-arg value="-web,-webAllowOthers,-webPort,8082"/>-->
-<!--    </bean>-->
+    <bean id="h2Console" class="org.h2.tools.Server" factory-method="createWebServer" init-method="start"
+          destroy-method="stop">
+        <constructor-arg value="-web,-webAllowOthers,-webPort,8082"/>
+    </bean>
 
 </beans> 

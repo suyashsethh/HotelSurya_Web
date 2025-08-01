@@ -12,6 +12,8 @@ public class BookingServiceImpl implements BookingService {
 
     @Autowired
     private BookingDAO bookingDAO;
+    
+    private boolean initialized = false;
 
     // Room prices per night
     private static final double DELUXE_SUITE_PRICE = 299.99;
@@ -34,7 +36,21 @@ public class BookingServiceImpl implements BookingService {
 
     @Override
     public List<Booking> getAllBookings() {
+        ensureInitialized();
         return bookingDAO.getAllBookings();
+    }
+    
+    private void ensureInitialized() {
+        if (!initialized) {
+            // Force DAO initialization by accessing it
+            try {
+                bookingDAO.getTotalBookings();
+            } catch (Exception e) {
+                // Table might not exist, let the DAO handle it
+                System.out.println("Database initialization triggered");
+            }
+            initialized = true;
+        }
     }
 
     @Override

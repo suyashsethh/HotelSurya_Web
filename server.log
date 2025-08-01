@@ -24,7 +24,7 @@
 [[1;34mINFO[m] 
 [[1;34mINFO[m] 
 [[1;34mINFO[m] [1m--- [0;32mjetty:9.4.54.v20240208:run[m [1m(default-cli)[m @ [36mHotelSurya-Web[0;1m ---[m
-[[1;34mINFO[m] Logging initialized @1596ms to org.eclipse.jetty.util.log.Slf4jLog
+[[1;34mINFO[m] Logging initialized @1705ms to org.eclipse.jetty.util.log.Slf4jLog
 [[1;34mINFO[m] webAppSourceDirectory not set. Trying src/main/webapp
 [[1;34mINFO[m] Reload Mechanic: automatic
 [[1;34mINFO[m] nonBlocking:false
@@ -140,18 +140,17 @@
 [[1;33mWARNING[m] org.apache.taglibs.standard.tlv.JstlXmlTLV$1 scanned from multiple locations: jar:file:///home/ubuntu/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlXmlTLV$1.class, jar:file:///home/ubuntu/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlXmlTLV$1.class
 [[1;33mWARNING[m] org.apache.taglibs.standard.tlv.JstlXmlTLV$Handler scanned from multiple locations: jar:file:///home/ubuntu/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlXmlTLV$Handler.class, jar:file:///home/ubuntu/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlXmlTLV$Handler.class
 [[1;33mWARNING[m] org.apache.taglibs.standard.tlv.JstlXmlTLV scanned from multiple locations: jar:file:///home/ubuntu/.m2/repository/org/apache/taglibs/taglibs-standard-impl/1.2.5/taglibs-standard-impl-1.2.5.jar!/org/apache/taglibs/standard/tlv/JstlXmlTLV.class, jar:file:///home/ubuntu/.m2/repository/javax/servlet/jstl/1.2/jstl-1.2.jar!/org/apache/taglibs/standard/tlv/JstlXmlTLV.class
-[[1;34mINFO[m] Scanning elapsed time=278ms
+[[1;34mINFO[m] Scanning elapsed time=287ms
 [[1;34mINFO[m] No Spring WebApplicationInitializer types detected on classpath
 [[1;34mINFO[m] DefaultSessionIdManager workerName=node0
 [[1;34mINFO[m] No SessionScavenger set, using defaults
 [[1;34mINFO[m] node0 Scavenging every 600000ms
 [[1;34mINFO[m] Initializing Spring DispatcherServlet 'spring'
 [[1;34mINFO[m] Initializing Servlet 'spring'
-[[1;34mINFO[m] Completed initialization in 484 ms
-[[1;34mINFO[m] Started o.e.j.m.p.JettyWebAppContext@4ef2ab73{Hotel Surya - Spring MVC Application,/hotelsurya,file:///workspace/src/main/webapp/,AVAILABLE}{file:///workspace/src/main/webapp/}
-[[1;34mINFO[m] Started ServerConnector@4c28f97e{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
-[[1;34mINFO[m] Started @2796ms
+[[1;34mINFO[m] Completed initialization in 495 ms
+[[1;34mINFO[m] Started o.e.j.m.p.JettyWebAppContext@11b32a14{Hotel Surya - Spring MVC Application,/hotelsurya,file:///workspace/src/main/webapp/,AVAILABLE}{file:///workspace/src/main/webapp/}
+[[1;34mINFO[m] Started ServerConnector@7538cfe6{HTTP/1.1, (http/1.1)}{0.0.0.0:8080}
+[[1;34mINFO[m] Started @2897ms
 [[1;34mINFO[m] Started Jetty Server
 Bookings table created/verified successfully!
-Inserted Successfully!
 Inserted Successfully!

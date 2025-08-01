@@ -2,7 +2,7 @@
 
 ## Current Configuration Status ✅
 
-**The application is currently configured to use H2 in-memory database** for immediate testing and development. This allows you to run the application right away without any database setup.
+**The application is currently configured to use H2 file-based database** for development with **persistent data storage**. This allows you to run the application right away with data that survives server restarts.
 
 ## Quick Start (Current Setup)
 
@@ -18,9 +18,10 @@
    - H2 Database Console: http://localhost:8082
 
 3. **H2 Database Connection Details:**
-   - URL: `jdbc:h2:mem:hotelsurya`
+   - URL: `jdbc:h2:file:./data/hotelsurya`
    - Username: `sa`
    - Password: (empty)
+   - **Data Storage**: `./data/hotelsurya.mv.db` (persistent file)
 
 ## Switching to MySQL (Production Setup)
 
@@ -257,7 +258,7 @@ mvn tomcat7:run
 
 ## Summary
 
-- ✅ **Current Setup**: H2 in-memory database (ready to use)
+- ✅ **Current Setup**: H2 file-based database with persistent storage (ready to use)
 - 🔄 **MySQL Ready**: Configuration and scripts prepared
 - 📝 **Easy Switch**: Simple configuration changes
 - 🚀 **Production Ready**: Complete setup guide provided

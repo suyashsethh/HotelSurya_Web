@@ -34,10 +34,10 @@
 
     <!-- Database Configuration -->
 
-    <!-- H2 Database DataSource for development -->
+    <!-- H2 Database DataSource for development (PERSISTENT FILE-BASED) -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="org.h2.Driver"/>
-        <property name="url" value="jdbc:h2:mem:hotelsurya;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE"/>
+        <property name="url" value="jdbc:h2:file:./data/hotelsurya;AUTO_SERVER=TRUE;DB_CLOSE_DELAY=-1"/>
         <property name="username" value="sa"/>
         <property name="password" value=""/>
     </bean>
